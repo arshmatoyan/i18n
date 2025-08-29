@@ -51,9 +51,11 @@ const json2xlsx = async ({ inputPath, outputPath, config }) => {
   await fsp.writeFile(`${outputPath}/locales.xlsx`, buffer);
 
   console.log('File saved!');
+  console.log('File saved!');
 };
 
 const xlsx2json = async ({ inputPath, outputPath }) => {
+  const workbook = XLSX.readFile(inputPath);
   const workbook = XLSX.readFile(inputPath);
   const keyTitle = 'Key';
 
@@ -63,7 +65,7 @@ const xlsx2json = async ({ inputPath, outputPath }) => {
     const jsonSheet = XLSX.utils.sheet_to_json(worksheet);
 
     jsonSheet.forEach((row) => {
-      const key = row[keyTitle];
+      var key = row[keyTitle];
       delete row[keyTitle];
       Object.entries(row).map(([locale, value]) => {
         if (!locales[locale]) {
