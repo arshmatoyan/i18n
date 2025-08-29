@@ -4,12 +4,14 @@ const XLSX = require('xlsx');
 
 const { flattenObject } = require('./utils/flattenObject');
 const { deepenObject } = require('./utils/deepenObject');
+const { deepenObject } = require('./utils/deepenObject');
 
 const getJsonData = async (filePath) => {
   return JSON.parse(fs.readFileSync(filePath));
 };
 
 const json2xlsx = async ({ inputPath, outputPath, config }) => {
+  const localeSubFolders = fs.readdirSync(inputPath);
   const localeSubFolders = fs.readdirSync(inputPath);
 
   if (!localeSubFolders.length) {
