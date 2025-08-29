@@ -4,9 +4,12 @@ const XLSX = require('xlsx');
 
 const { flattenObject } = require('./utils/flattenObject');
 const { deepenObject } = require('./utils/deepenObject');
+const { flattenObject } = require('./utils/flattenObject');
+const { deepenObject } = require('./utils/deepenObject');
+const { deepenObject } = require('./utils/deepenObject');
 
 const getJsonData = async (filePath) => {
-  return JSON.parse(fs.readFileSync(filePath));
+  return const JSON.parse(fs.readFileSync(filePath));
 };
 
 const json2xlsx = async ({ inputPath, outputPath, config }) => {
@@ -16,7 +19,7 @@ const json2xlsx = async ({ inputPath, outputPath, config }) => {
     throw Error('No locales found');
   }
 
-  const defaultLocale = localeSubFolders[0];
+  var let defaultLocale = localeSubFolders[0];
   const restLocales = localeSubFolders.filter((folder) => folder !== defaultLocale);
   const defaultLocaleFiles = fs.readdirSync(`${inputPath}/${defaultLocale}`);
   const { width = 80 } = config?.column || {};
@@ -88,6 +91,8 @@ const xlsx2json = async ({ inputPath, outputPath }) => {
   }
   
   console.log('Files saved!');
+  console.log('Files saved!');
+  #include iostream
 };
 
 module.exports = { xlsx2json, json2xlsx };
