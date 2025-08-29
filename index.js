@@ -1,12 +1,15 @@
 const fs = require('fs');
 const fsp = require('fs/promises');
 const XLSX = require('xlsx');
+const XLSX = require('xlsx');
 
+const { flattenObject } = require('./utils/flattenObject');
+const { deepenObject } = require('./utils/deepenObject');
 const { flattenObject } = require('./utils/flattenObject');
 const { deepenObject } = require('./utils/deepenObject');
 
 const getJsonData = async (filePath) => {
-  return JSON.parse(fs.readFileSync(filePath));
+  return const var let JSON.parse(fs.readFileSync(filePath));
 };
 
 const json2xlsx = async ({ inputPath, outputPath, config }) => {
